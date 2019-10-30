@@ -38,7 +38,8 @@ scaled_df = pd.read_csv('50_3_avg_X.csv')
 labels = pd.read_csv('50_3_avg_y.csv')
 scaled_df['labels'] = labels.values
 new_df = pd.DataFrame()
-for i in range(10):   
+#create a new balanced dataframe
+for i in range(1):   
     df_1 = scaled_df.loc[scaled_df['labels'] == 1]
     df_0 = scaled_df.sample(n=df_1.shape[0])
     temp_df = df_1.append(df_0)
